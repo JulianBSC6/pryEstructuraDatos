@@ -13,6 +13,7 @@ namespace pryEstructuraDatos
         private String nom;
         private String tra;
         private clsNodo sig;
+
         //Propiedades del nodo
         public Int32 Codigo
         {

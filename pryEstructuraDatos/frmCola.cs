@@ -31,5 +31,40 @@ namespace pryEstructuraDatos
         {
 
         }
+        ClsCola FilaDePersonas = new ClsCola();
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+            FilaDePersonas.Agregar(ObjNodo);
+            FilaDePersonas.Recorrer(dgvGrilla);
+            FilaDePersonas.Recorrer(lstCola);
+            FilaDePersonas.Recorrer();
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (FilaDePersonas.Primero != null)
+            {
+                lblCodigo.Text = FilaDePersonas.Primero.Codigo.ToString();
+                lblNombre.Text = FilaDePersonas.Primero.Nombre;
+                lblNombre.Text = FilaDePersonas.Primero.Tramite;
+                FilaDePersonas.Eliminar();
+                FilaDePersonas.Recorrer(dgvGrilla);
+                FilaDePersonas.Recorrer(lstCola);
+                FilaDePersonas.Recorrer();
+            }
+            else
+            {
+                lblCodigo.Text = "";
+                lblNombre.Text = "";
+                lblTramite.Text = "";
+            }
+        }
     }
 }
