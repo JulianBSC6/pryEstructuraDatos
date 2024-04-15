@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
 
 namespace pryEstructuraDatos
 {
-    internal class clsPila
+    internal class clsListaSimple
     {
-        //campos de la clase
         private clsNodo pri;
 
-        //propiedades de la clase;
         public clsNodo Primero
         {
             get { return pri; }
             set { pri = value; }
-
         }
 
         public void Agregar(clsNodo Nuevo)
@@ -29,19 +26,44 @@ namespace pryEstructuraDatos
             }
             else
             {
-                Nuevo.Siguiente = Primero;
-                Primero = Nuevo;
+                if(Nuevo.Codigo <=Primero.Codigo)
+                {
+                    Nuevo.Siguiente = Primero;
+                    Primero = Nuevo;
+                }
+                else
+                {
+                    clsNodo aux = Primero;
+                    clsNodo ant = Primero;
+                    while(aux != null && Nuevo.Codigo > aux.Codigo)
+                    {
+                        ant = aux;
+                        aux = aux.Siguiente;
+                    }
+                    ant.Siguiente = Nuevo;
+                    Nuevo.Siguiente = aux;
+                }
             }
         }
 
-        public void Eliminar()
+        public void Eliminar(Int32 Codigo)
         {
-            if(Primero != null)
+            if(Primero.Codigo == Codigo)
             {
                 Primero = Primero.Siguiente;
             }
+            else
+            {
+                clsNodo ant = Primero;
+                clsNodo aux = Primero;
+                while(aux.Codigo != Codigo)
+                {
+                    ant = aux;
+                    aux = aux.Siguiente;
+                }
+                ant.Siguiente = aux.Siguiente;
+            }
         }
-
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = Primero;

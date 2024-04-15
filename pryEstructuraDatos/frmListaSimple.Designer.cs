@@ -35,6 +35,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstListaSimple = new System.Windows.Forms.ListBox();
             this.gpElementoEliminado = new System.Windows.Forms.GroupBox();
+            this.cmbCodigos = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gpNuevoElemento = new System.Windows.Forms.GroupBox();
@@ -45,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbCodigos = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -112,6 +112,14 @@
             this.gpElementoEliminado.TabStop = false;
             this.gpElementoEliminado.Text = "Elemento a eliminar";
             // 
+            // cmbCodigos
+            // 
+            this.cmbCodigos.FormattingEnabled = true;
+            this.cmbCodigos.Location = new System.Drawing.Point(56, 73);
+            this.cmbCodigos.Name = "cmbCodigos";
+            this.cmbCodigos.Size = new System.Drawing.Size(121, 21);
+            this.cmbCodigos.TabIndex = 12;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(6, 140);
@@ -120,6 +128,7 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -154,6 +163,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -202,14 +212,6 @@
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
-            // 
-            // cmbCodigos
-            // 
-            this.cmbCodigos.FormattingEnabled = true;
-            this.cmbCodigos.Location = new System.Drawing.Point(56, 73);
-            this.cmbCodigos.Name = "cmbCodigos";
-            this.cmbCodigos.Size = new System.Drawing.Size(121, 21);
-            this.cmbCodigos.TabIndex = 12;
             // 
             // pictureBox1
             // 

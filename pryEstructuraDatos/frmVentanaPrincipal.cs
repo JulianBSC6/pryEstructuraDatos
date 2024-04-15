@@ -30,5 +30,12 @@ namespace pryEstructuraDatos
             frmCola pasar = new frmCola();
             pasar.Show();
         }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmListaSimple pasar = new frmListaSimple();
+            pasar.Show();
+        }
     }
 }
