@@ -53,7 +53,7 @@ namespace pryEstructuraDatos
             {
                 lblCodigo.Text = FilaDePersonas.Primero.Codigo.ToString();
                 lblNombre.Text = FilaDePersonas.Primero.Nombre;
-                lblNombre.Text = FilaDePersonas.Primero.Tramite;
+                lblTramite.Text = FilaDePersonas.Primero.Tramite;
                 FilaDePersonas.Eliminar();
                 FilaDePersonas.Recorrer(dgvGrilla);
                 FilaDePersonas.Recorrer(lstCola);

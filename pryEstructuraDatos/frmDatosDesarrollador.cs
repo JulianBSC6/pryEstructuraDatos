@@ -16,5 +16,12 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmVentanaPrincipal volver = new frmVentanaPrincipal();
+            volver.Show();
+        }
     }
 }

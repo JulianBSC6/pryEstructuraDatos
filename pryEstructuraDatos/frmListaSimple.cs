@@ -36,7 +36,15 @@ namespace pryEstructuraDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if(Lista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigos.Text);
+                Lista.Eliminar(x);
+                Lista.Recorrer(dgvGrilla);
+                Lista.Recorrer(lstListaSimple);
+                Lista.Recorrer(cmbCodigos);
+                Lista.Recorrer();
+            }
         }
     }
 }
