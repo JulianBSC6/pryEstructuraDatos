@@ -43,7 +43,6 @@ namespace pryEstructuraDatos
             {
                 Primero = nvo;
                 Ultimo = nvo;
-
             }
             else
             {
@@ -52,22 +51,30 @@ namespace pryEstructuraDatos
                     nvo.Siguiente = Primero;
                     Primero.Anterior = nvo;
                     Primero = nvo;
-
                 }
                 else
                 {
-                    clsNodo Sig = Primero;
-                    clsNodo Ant = Primero;
-                    while (Sig.Codigo < nvo.Codigo)
+                    if (nvo.Codigo > Ultimo.Codigo)
                     {
-                        Ant = Sig;
-                        Sig = Sig.Siguiente;
-
+                        nvo.Anterior = Ultimo;
+                        Ultimo.Siguiente = nvo;
+                        Ultimo = nvo;
                     }
-                    Ant.Siguiente = nvo;
-                    nvo.Siguiente = Sig;
-                    Sig.Anterior = nvo;
-                    nvo.Anterior = Ant;
+                    else
+                    {
+                        clsNodo Sig = Primero;
+                        clsNodo Ant = Primero;
+                        while (Sig.Codigo < nvo.Codigo)
+                        {
+                            Ant = Sig;
+                            Sig = Sig.Siguiente;
+
+                        }
+                        Ant.Siguiente = nvo;
+                        nvo.Siguiente = Sig;
+                        Sig.Anterior = nvo;
+                        nvo.Anterior = Ant;
+                    }
                 }
             }
         }
