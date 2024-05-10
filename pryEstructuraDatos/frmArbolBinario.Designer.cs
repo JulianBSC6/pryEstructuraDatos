@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeArbol = new System.Windows.Forms.TreeView();
             this.gpListado = new System.Windows.Forms.GroupBox();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.optPostOrden = new System.Windows.Forms.RadioButton();
+            this.optPreOrden = new System.Windows.Forms.RadioButton();
+            this.optInOrdenDesc = new System.Windows.Forms.RadioButton();
+            this.optInOrdenAsc = new System.Windows.Forms.RadioButton();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,76 +51,82 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
+            this.lstArbolBinario = new System.Windows.Forms.ListBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.gpElementoEliminado.SuspendLayout();
             this.gpNuevoElemento.SuspendLayout();
             this.SuspendLayout();
             // 
-            // treeView1
+            // treeArbol
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 10);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(296, 215);
-            this.treeView1.TabIndex = 0;
+            this.treeArbol.Location = new System.Drawing.Point(41, 10);
+            this.treeArbol.Name = "treeArbol";
+            this.treeArbol.Size = new System.Drawing.Size(285, 215);
+            this.treeArbol.TabIndex = 0;
             // 
             // gpListado
             // 
-            this.gpListado.Controls.Add(this.radioButton6);
-            this.gpListado.Controls.Add(this.radioButton5);
-            this.gpListado.Controls.Add(this.radioButton4);
-            this.gpListado.Controls.Add(this.radioButton3);
+            this.gpListado.Controls.Add(this.optPostOrden);
+            this.gpListado.Controls.Add(this.optPreOrden);
+            this.gpListado.Controls.Add(this.optInOrdenDesc);
+            this.gpListado.Controls.Add(this.optInOrdenAsc);
             this.gpListado.Controls.Add(this.dgvGrilla);
-            this.gpListado.Location = new System.Drawing.Point(45, 231);
+            this.gpListado.Location = new System.Drawing.Point(12, 231);
             this.gpListado.Name = "gpListado";
             this.gpListado.Size = new System.Drawing.Size(710, 210);
             this.gpListado.TabIndex = 16;
             this.gpListado.TabStop = false;
             this.gpListado.Text = "Listado Del Arbol";
             // 
-            // radioButton6
+            // optPostOrden
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(6, 170);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(78, 17);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Post-Orden";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.optPostOrden.AutoSize = true;
+            this.optPostOrden.Location = new System.Drawing.Point(6, 170);
+            this.optPostOrden.Name = "optPostOrden";
+            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.optPostOrden.TabIndex = 5;
+            this.optPostOrden.TabStop = true;
+            this.optPostOrden.Text = "Post-Orden";
+            this.optPostOrden.UseVisualStyleBackColor = true;
+            this.optPostOrden.CheckedChanged += new System.EventHandler(this.optPostOrden_CheckedChanged);
             // 
-            // radioButton5
+            // optPreOrden
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(6, 128);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(73, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Pre-Orden";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.optPreOrden.AutoSize = true;
+            this.optPreOrden.Location = new System.Drawing.Point(6, 128);
+            this.optPreOrden.Name = "optPreOrden";
+            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.optPreOrden.TabIndex = 4;
+            this.optPreOrden.TabStop = true;
+            this.optPreOrden.Text = "Pre-Orden";
+            this.optPreOrden.UseVisualStyleBackColor = true;
+            this.optPreOrden.CheckedChanged += new System.EventHandler(this.optPreOrden_CheckedChanged);
             // 
-            // radioButton4
+            // optInOrdenDesc
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 85);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(133, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "In-Orden Descendente";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.optInOrdenDesc.AutoSize = true;
+            this.optInOrdenDesc.Location = new System.Drawing.Point(6, 85);
+            this.optInOrdenDesc.Name = "optInOrdenDesc";
+            this.optInOrdenDesc.Size = new System.Drawing.Size(133, 17);
+            this.optInOrdenDesc.TabIndex = 3;
+            this.optInOrdenDesc.TabStop = true;
+            this.optInOrdenDesc.Text = "In-Orden Descendente";
+            this.optInOrdenDesc.UseVisualStyleBackColor = true;
+            this.optInOrdenDesc.CheckedChanged += new System.EventHandler(this.optInOrdenDesc_CheckedChanged);
             // 
-            // radioButton3
+            // optInOrdenAsc
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 40);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(126, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "In-Orden Ascendente";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.optInOrdenAsc.AutoSize = true;
+            this.optInOrdenAsc.Location = new System.Drawing.Point(6, 40);
+            this.optInOrdenAsc.Name = "optInOrdenAsc";
+            this.optInOrdenAsc.Size = new System.Drawing.Size(126, 17);
+            this.optInOrdenAsc.TabIndex = 2;
+            this.optInOrdenAsc.TabStop = true;
+            this.optInOrdenAsc.Text = "In-Orden Ascendente";
+            this.optInOrdenAsc.UseVisualStyleBackColor = true;
+            this.optInOrdenAsc.CheckedChanged += new System.EventHandler(this.optInOrdenAsc_CheckedChanged);
             // 
             // dgvGrilla
             // 
@@ -177,6 +183,7 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -211,6 +218,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -268,18 +276,43 @@
             this.btnEquilibrar.TabIndex = 17;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
+            // 
+            // lstArbolBinario
+            // 
+            this.lstArbolBinario.FormattingEnabled = true;
+            this.lstArbolBinario.Location = new System.Drawing.Point(748, 239);
+            this.lstArbolBinario.Name = "lstArbolBinario";
+            this.lstArbolBinario.Size = new System.Drawing.Size(202, 199);
+            this.lstArbolBinario.TabIndex = 18;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.BackgroundImage = global::pryEstructuraDatos.Properties.Resources.back_158491_1280;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Location = new System.Drawing.Point(-1, -1);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(36, 31);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(962, 450);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.lstArbolBinario);
             this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.gpListado);
             this.Controls.Add(this.gpElementoEliminado);
             this.Controls.Add(this.gpNuevoElemento);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.treeArbol);
             this.Name = "frmArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructuras Ramificadas - Arbol Binario";
             this.gpListado.ResumeLayout(false);
             this.gpListado.PerformLayout();
@@ -294,10 +327,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeArbol;
         private System.Windows.Forms.GroupBox gpListado;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton optInOrdenDesc;
+        private System.Windows.Forms.RadioButton optInOrdenAsc;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -314,8 +347,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton optPostOrden;
+        private System.Windows.Forms.RadioButton optPreOrden;
         private System.Windows.Forms.Button btnEquilibrar;
+        private System.Windows.Forms.ListBox lstArbolBinario;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

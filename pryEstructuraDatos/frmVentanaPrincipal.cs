@@ -41,7 +41,7 @@ namespace pryEstructuraDatos
         private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmCola pila = new frmCola();
+            frmPila pila = new frmPila();
             pila.Show();
         }
 
@@ -54,6 +54,13 @@ namespace pryEstructuraDatos
         {
             this.Hide();
             frmListaDoble pasar = new frmListaDoble();
+            pasar.Show();
+        }
+
+        private void arbolBinarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmArbolBinario pasar = new frmArbolBinario();
             pasar.Show();
         }
     }

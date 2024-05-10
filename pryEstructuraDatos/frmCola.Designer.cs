@@ -44,18 +44,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pctImagen = new System.Windows.Forms.PictureBox();
             this.gpListado = new System.Windows.Forms.GroupBox();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstCola = new System.Windows.Forms.ListBox();
+            this.pctImagen = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.gpNuevoElemento.SuspendLayout();
             this.gpElementoEliminado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).BeginInit();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // gpNuevoElemento
@@ -211,16 +212,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Código:";
             // 
-            // pctImagen
-            // 
-            this.pctImagen.Image = global::pryEstructuraDatos.Properties.Resources.cola;
-            this.pctImagen.Location = new System.Drawing.Point(33, 12);
-            this.pctImagen.Name = "pctImagen";
-            this.pctImagen.Size = new System.Drawing.Size(213, 189);
-            this.pctImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctImagen.TabIndex = 2;
-            this.pctImagen.TabStop = false;
-            // 
             // gpListado
             // 
             this.gpListado.Controls.Add(this.dgvGrilla);
@@ -267,11 +258,35 @@
             this.lstCola.Size = new System.Drawing.Size(185, 199);
             this.lstCola.TabIndex = 0;
             // 
+            // pctImagen
+            // 
+            this.pctImagen.Image = global::pryEstructuraDatos.Properties.Resources.cola;
+            this.pctImagen.Location = new System.Drawing.Point(33, 12);
+            this.pctImagen.Name = "pctImagen";
+            this.pctImagen.Size = new System.Drawing.Size(213, 189);
+            this.pctImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctImagen.TabIndex = 2;
+            this.pctImagen.TabStop = false;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.BackgroundImage = global::pryEstructuraDatos.Properties.Resources.back_158491_1280;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Location = new System.Drawing.Point(1, 0);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(36, 31);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gpListado);
             this.Controls.Add(this.pctImagen);
             this.Controls.Add(this.gpElementoEliminado);
@@ -284,9 +299,9 @@
             this.gpNuevoElemento.PerformLayout();
             this.gpElementoEliminado.ResumeLayout(false);
             this.gpElementoEliminado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).EndInit();
             this.gpListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,5 +331,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

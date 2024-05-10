@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,22 +79,41 @@ namespace pryEstructuraDatos
                 }
             }
         }
-        public void Eliminar(Int32 Codigo)
+        public void EliminarListaDoble(Int32 Codigo)
         {
-            if (Primero.Codigo == Codigo)
+            if (Primero.Codigo == Codigo && Ultimo == Primero)
             {
-                Primero = Primero.Siguiente;
+                Primero = null;
+                Ultimo = null;
             }
             else
             {
-                clsNodo ant = Primero;
-                clsNodo aux = Primero;
-                while (aux.Codigo != Codigo)
+                if (Primero.Codigo == Codigo)
                 {
-                    ant = aux;
-                    aux = aux.Siguiente;
+                    Primero = Primero.Siguiente;
+                    Primero.Anterior = null;
                 }
-                ant.Siguiente = aux.Siguiente;
+                else
+                {
+                    if (Ultimo.Codigo == Codigo)
+                    {
+                        Ultimo = Ultimo.Anterior;
+                        Ultimo.Siguiente = null;
+                    }
+                    else
+                    {
+                        clsNodo Ant = Primero;
+                        clsNodo Aux = Primero;
+                        while (Aux.Codigo < Codigo)
+                        {
+                            Ant = Aux;
+                            Aux = Aux.Siguiente;
+                        }
+                        Ant.Siguiente = Aux.Siguiente;
+                        Aux = Aux.Siguiente;
+                        Aux.Anterior = Ant;
+                    }
+                }
             }
         }
         public void Recorrer(DataGridView Grilla)
@@ -126,6 +146,71 @@ namespace pryEstructuraDatos
                 Combo.Items.Add(aux.Nombre);
                 aux = aux.Siguiente;
             }
+        }
+
+        public void RecorrerDescendente(ListBox Lista)
+        {
+            clsNodo aux = Ultimo;
+            Lista.Items.Clear();
+            while (aux != null)
+            {
+                Lista.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
+        public void RecorrerDescendente(ComboBox Combo)
+        {
+            clsNodo aux = Ultimo;
+            Combo.Items.Clear();
+            while (aux != null)
+            {
+                Combo.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
+        public void RecorrerDescendente(DataGridView Grilla)
+        {
+            clsNodo aux = Ultimo;
+            Grilla.Rows.Clear();
+            while (aux != null)
+            {
+                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+        public void Recorrer()
+        {
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter("Lista Doble.csv", false);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Código;Nombre;Trámite");
+            while (aux != null)
+            {
+                AD.Write(aux.Codigo);
+                AD.Write(";");
+                AD.Write(aux.Nombre);
+                AD.Write(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Siguiente;
+            }
+            AD.Close();
+        }
+        public void RecorrerDescendente()
+        {
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter("Lista Doble.csv", false);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Código;Nombre;Trámite");
+            while (aux != null)
+            {
+                AD.Write(aux.Codigo);
+                AD.Write(";");
+                AD.Write(aux.Nombre);
+                AD.Write(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Anterior;
+            }
+            AD.Close();
         }
     }
 }

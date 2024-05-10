@@ -73,6 +73,16 @@ namespace pryEstructuraDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_158491_1280 {
+            get {
+                object obj = ResourceManager.GetObject("back-158491_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clint_adair_BW0vK_FA3eg_unsplash {
             get {
                 object obj = ResourceManager.GetObject("clint-adair-BW0vK-FA3eg-unsplash", resourceCulture);

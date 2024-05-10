@@ -161,5 +161,8 @@
   <ItemGroup>
     <None Include="Resources\clint-adair-BW0vK-FA3eg-unsplash.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-158491_1280.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
