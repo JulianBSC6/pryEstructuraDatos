@@ -23,5 +23,13 @@ namespace pryEstructuraDatos
             frmVentanaPrincipal volver = new frmVentanaPrincipal();
             volver.Show();
         }
+        clsBaseDatos objDatos = new clsBaseDatos();
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+           
+            objDatos.Listar(dgvGrilla, txtSql.Text);
+
+        }
     }
 }

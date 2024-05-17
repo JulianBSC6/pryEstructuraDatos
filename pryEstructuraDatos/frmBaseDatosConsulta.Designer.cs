@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSql = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -46,13 +46,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta en SQL:";
             // 
-            // textBox1
+            // txtSql
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 29);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(772, 166);
-            this.textBox1.TabIndex = 1;
+            this.txtSql.Location = new System.Drawing.Point(16, 29);
+            this.txtSql.Multiline = true;
+            this.txtSql.Name = "txtSql";
+            this.txtSql.Size = new System.Drawing.Size(772, 166);
+            this.txtSql.TabIndex = 1;
             // 
             // btnListar
             // 
@@ -63,6 +63,7 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvGrilla
             // 
@@ -90,7 +91,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSql);
             this.Controls.Add(this.label1);
             this.Name = "frmBaseDatosConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -104,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSql;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnVolver;
