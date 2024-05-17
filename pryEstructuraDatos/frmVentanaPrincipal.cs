@@ -63,5 +63,26 @@ namespace pryEstructuraDatos
             frmArbolBinario pasar = new frmArbolBinario();
             pasar.Show();
         }
+
+        private void operacionesConTablasDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBaseDatosOperaciones pasar = new frmBaseDatosOperaciones();
+            pasar.Show();
+        }
+
+        private void consultasEnLaBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBaseDatosConsulta pasar = new frmBaseDatosConsulta();
+            pasar.Show();
+        }
+
+        private void repasoDeOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBaseDatosRepasoOperaciones pasar = new frmBaseDatosRepasoOperaciones ();
+            pasar.Show();
+        }
     }
 }
