@@ -172,6 +172,7 @@
             this.btnUnión.TabIndex = 6;
             this.btnUnión.Text = "Unión";
             this.btnUnión.UseVisualStyleBackColor = true;
+            this.btnUnión.Click += new System.EventHandler(this.btnUnión_Click);
             // 
             // btnVolver
             // 

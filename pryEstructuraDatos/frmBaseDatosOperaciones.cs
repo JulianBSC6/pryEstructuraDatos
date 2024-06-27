@@ -23,5 +23,10 @@ namespace pryEstructuraDatos
             frmVentanaPrincipal volver = new frmVentanaPrincipal();
             volver.Show();
         }
+
+        private void btnUnión_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
