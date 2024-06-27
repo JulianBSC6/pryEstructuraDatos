@@ -50,6 +50,28 @@
             // cmbOperaciones
             // 
             this.cmbOperaciones.FormattingEnabled = true;
+            this.cmbOperaciones.Items.AddRange(new object[] {
+            "Proyeccion Simple",
+            "Juntar",
+            "Interseccion 1",
+            "Interseccion 2 ",
+            "Orden 1",
+            "Orden 2",
+            "Intersección 3",
+            "Diferencia",
+            "Juntar 2",
+            "Juntar 3",
+            "Selección simple",
+            "Selección multiatributo",
+            "Proyeccion Multiatributo",
+            "Seleccion simple 2",
+            "Seleccion simple 3",
+            "Seleccion Multiatributo 2",
+            "Seleccion por convolucion",
+            "Seleccion por convolucion 2",
+            "Diferencia 2",
+            "Proyeccion por un atributo",
+            "Proyeccion por un atributo 2"});
             this.cmbOperaciones.Location = new System.Drawing.Point(292, 29);
             this.cmbOperaciones.Name = "cmbOperaciones";
             this.cmbOperaciones.Size = new System.Drawing.Size(417, 21);
@@ -63,6 +85,7 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // lblResultado
             // 
